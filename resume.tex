@@ -1,4 +1,4 @@
-%-------------------------
+%------------------------
 % Resume in Latex
 % Author : Michael Zappa
 % Based off of: https://www.overleaf.com/latex/templates/jakes-resume/syzfjbzwjncs
@@ -21,7 +21,7 @@
 \input{glyphtounicode}
 
 
-%----------FONT OPTIONS----------
+%------------FONT OPTIONS------------
 % sans-serif
 % \usepackage[sfdefault]{FiraSans}
 % \usepackage[sfdefault]{roboto}
@@ -31,7 +31,6 @@
 % serif
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
-
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -60,7 +59,7 @@
 % Ensure that generate pdf is machine readable/ATS parsable
 \pdfgentounicode=1
 
-%-------------------------
+%------------------------------------------------
 % Custom commands
 \newcommand{\resumeItem}[1]{
 	\item\small{
@@ -83,10 +82,18 @@
 	\end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
+\newcommand{\resumeJobHeading}[5]{
+  \item
+	\begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+		{\textbf{#1} $|$ \emph{#2}} & #3 \\
+		\textit{\small#4} & \textit{\small #5} \\
+	\end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
 	\item
-	\begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-		\small#1 & #2 \\
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      {\textbf{#1} $|$ \emph{#2}} & #3 \\
 	\end{tabular*}\vspace{-7pt}
 }
 
@@ -94,108 +101,105 @@
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
-		\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-		\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubHeadingListStart}{
+  \begin{itemize}[leftmargin=0.15in, label={}]
+}
+\newcommand{\resumeSubHeadingListEnd}{
+\end{itemize}
+}
 
-%-----------RESUME STARTS HERE-----------
+\newcommand{\resumeItemListStart}{
+  \begin{itemize}
+}
+\newcommand{\resumeItemListEnd}{
+\end{itemize}\vspace{-5pt}
+}
+
+%------------RESUME STARTS HERE------------
 
 \begin{document}
 
 \begin{center}
 	\textbf{\Huge \scshape Michael Zappa} \\ \vspace{1pt}
-	\small 952-388-7465 $|$ \href{mailto:zappa.m@northeastern.edu}{\underline{zappa.m@northeastern.edu}} $|$
-	\href{https://github.com/michzappa}{\underline{github.com/michzappa}} $|$ \href{https://www.linkedin.com/in/michael-zappa-b01780152/}{\underline{linkedin}}
+	\small 952-388-7465 $|$
+  \href{mailto:zappa.m@northeastern.edu}{\underline{zappa.m@northeastern.edu}} $|$
+	\href{https://gitlab.com/michzappa}{\underline{gitlab.com/michzappa}} $|$
+	\href{https://github.com/michzappa}{\underline{github.com/michzappa}} $|$
+  \href{https://www.linkedin.com/in/michael-zappa/}{\underline{linkedin.com/in/michael-zappa}}
 \end{center}
 
-%-----------EDUCATION-----------
+%------------EDUCATION------------
 \section{Education}
 \resumeSubHeadingListStart
 \resumeSubheading
 {Khoury College of Computer Sciences, Northeastern University}{Boston, MA}
-{Bachelor of Science in Computer Science, Minor in Linguistics; GPA: 3.9}{Aug. 2018 -- May 2023}
+{Bachelor of Science in Computer Science, Minor in Linguistics}{Aug. 2018 -- May 2023}
 \resumeItemListStart
 \resumeItem{GPA: 3.9/4.0, Dean's List all semesters, Honors Program.}
-\resumeItem{Relevant Coursework: Object Oriented Design, Algorithms and Data Structures, Computer Systems, Networks and Distributed Systems, Foundations of Cybersecurity, Embedded Design, Linguistic Analysis.}
-\resumeItem{Attended Dialogue of Civilization in the North of Ireland focused on the role of storytelling in community activism and conflict resolution.}
+\resumeItem{Relevant Coursework: Computer Systems, Networks and Distributed Systems, Systems Security, Object Oriented Design, Algorithms and Data Structures, Foundations of Cybersecurity, Programming Languages.}
+\resumeItem{Attended Dialogue of Civilization in the North of Ireland focused on the role of storytelling in community activism, conflict resolution, and conflicted identities.}
 \resumeItemListEnd
-% \resumeSubheading
-% {Edina High School}{Edina, MN}
-% {High School Degree;  GPA: 3.9}{Sep. 2015 -- June 2018}
-% \resumeItemListStart
-% \resumeItem{Awards: National AP Scholar, AP Scholar with Distinction.}
-% \resumeItem{Extracurriculars: Rower at Twin Cities Youth Rowing, Delegate at Edina Model United Nations.}
-% \resumeItemListEnd
 \resumeSubHeadingListEnd
 
-%-----------PROGRAMMING SKILLS-----------
-\section{Technical Skills}
-\begin{itemize}[leftmargin=0.15in, label={}]
-	\small{\item{
-	      \textbf{Languages}{: Java, JavaScript, TypeScript, C/C++, Elixir, SQL (Postgres), HTML/CSS} \\
-	      \textbf{Frameworks}{: React, Node.js, JUnit, Swing, Phoenix} \\
-	      \textbf{Developer Tools}{: Emacs, Git, VS Code, PyCharm, JetBrains, Eclipse}\\
-	      \textbf{Platforms}{: Heroku, Google Compute Engine, Microsoft Azure, Gigalixir}\\
-	      \textbf{OS}{: Linux (Ubuntu/Arch Linux), Windows}
-	      }}
-\end{itemize}
+%------------EXPERIENCE------------
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeJobHeading
+{Software Developer Co-Op} {Ruby on Rails, Oracle SQL} {July 2021 -- January 2022}
+{Smartleaf}{Boston, MA}
+\resumeItemListStart
+\resumeItem{Specified, implemented, and tested API endpoints requested by clients in the wealth management industry.}
+\resumeItem{Patched sequence bug in Ruby database adapter when importing large batches of rows.}
+\resumeItem{Conducted security audit and corresponding upgrades of Ruby and JavaScript dependencies.}
+\resumeItem{Engaged in cross-functional effort to fix third-party data transfer in production.}
+\resumeItem{Prepared application for transition from Oracle SQL to PostgreSQL.}
+\resumeItem{Created automated performance and A/B tests of application across different environments and databases.}
+\resumeItem{Coordinated release pipeline between developer and business teams.}
+\resumeItem{Fulfilled client deliverables ahead of schedule.}
+\resumeItem{Participated in hiring process for new co-ops and permanent team members.}
+\resumeItem{Onboarded new team members at multiple levels of seniority.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
 
-%-----------PROJECTS-----------
+%------------PROJECTS------------
 \section{Projects}
 \resumeSubHeadingListStart
 \resumeProjectHeading
-{\textbf{Husky Hunt Helper} $|$ \emph{TypeScript, Node,js, SQLite, React Native}}{April 2020 -- August 2020}
+{\textbf{Husky Hunt Helper}} {TypeScript, Node.js, SQLite, React Native} {April 2020 -- August 2020}
 \resumeItemListStart
 \resumeItem{Led back-end and mobile development for a team creating a web/mobile app to facilitate the scavenger hunt put on by Northeastern University.}
 \resumeItem{Designed a web server to manage the uploading, categorizing, and reading of groups, paths, and clues.}
 \resumeItem{Developed mobile app to give directions to clues around Boston and upload photos to the server.}
 \resumeItemListEnd
 \resumeProjectHeading
-{\textbf{Fish Card Game(s)} $|$ \emph{Node.js, React, GraphQL, Elixir, Phoenix, PostgreSQL}}{April 2020 -- August 2020}
+{\textbf{Fish Card Game(s)}} {Node.js, React, GraphQL, Elixir, Phoenix, PostgreSQL} {April 2020 -- August 2020}
 \resumeItemListStart
-\resumeItem{Created web apps to play "Fish" card game with friends remotely during COVID-19 pandemic.}
+\resumeItem{Created web apps to play ``Fish'' card game with friends remotely during COVID-19 pandemic.}
 \resumeItem{Implemented multiple REST web servers to process and store data using Express.js, GraphQL, and Phoenix.}
 \resumeItem{Developed front-end for REST servers using React.}
 \resumeItem{Utilized Phoenix LiveView to create an application with real-time view updates using built-in websockets.}
 \resumeItemListEnd
-\resumeProjectHeading
-{\textbf{Easy Animator Class Project} $|$
-	\emph{Java, Swing, JUnit}}{October 2020 -- December 2020}
-\resumeItemListStart
-\resumeItem{Created GUI which provides the user with means to pause, loop, restart, and change the speed of the animation shown.}
-\resumeItem{Displays animations which are interpreted from text files.}
-\resumeItemListEnd
-\resumeProjectHeading
-{\textbf{Java Algorithm Class Projects} $|$
-	\emph{Java}}{March 2020 -- April 2020}
-\resumeItemListStart
-\resumeItem{Implemented Kruskal's algorithm to generate mazes and different methods to solve them.}
-\resumeItem{Developed an algorithm to compress images by removing a line of the least important pixels.}
-\resumeItem{Used Northeastern's teaching graphics library to create interactive GUI's to display the progress of these algorithms.}
-\resumeItemListEnd
 \resumeSubHeadingListEnd
 
-%-----------EXPERIENCE-----------
-\section{Experience}
-\resumeSubHeadingListStart
-\resumeSubheading
-{Cashier}{June 2018 -- August 2018}
-{Lunds and Byerleys}{Edina, MN}
-\resumeItemListStart
-\resumeItem{Helped customers complete purchases and join reward programs to promote customer satisfaction and loyalty.}
-\resumeItem{Processed payments including checks, cash, credit and EBT.}
-\resumeItemListEnd
-\resumeSubHeadingListEnd
+%------------TECHNICAL SKILLS------------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+	\small{\item{
+	      \textbf{Languages}{: Ruby, Java, Node.js, Python, Rust, Elixir, C/C++, SQL} \\
+	      \textbf{Frameworks}{: Rails, React, Swing, Phoenix} \\
+	      \textbf{Developer Tools}{: Emacs, Git, Jira, JetBrains}\\
+	      \textbf{OS}{: Linux, MacOS, Windows}
+	      }}
+    \end{itemize}
 
-% ------INTERESTS-----
+%---------------INTERESTS------------
 \section{Interests}
 \resumeItemListStart
-\resumeItem{Computing: Programming language design and implementation, Linux and open-source software.}
-\resumeItem{Other: Foreign languages, geopolitics, knitting, cycling, motorsport, soccer.}
+\resumeItem{Computing: Reproducible packages and systems, functional and natural language programming, formal verification.}
+\resumeItem{Other: Linguistics and foreign languages, high fantasy novels, geography, rugby, motorsport.}
 \resumeItemListEnd
 
-%-------------------------------------------
+%---------------------------------------------
 \end{document}
 
 %%% Local Variables:
