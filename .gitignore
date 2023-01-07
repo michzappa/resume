@@ -1,4 +1,6 @@
 *
-!resume.tex
-!resume.pdf
+!*.tex
+!*.pdf
 !.gitignore
+!flake.nix
+!flake.lock
